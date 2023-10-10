@@ -35,7 +35,8 @@ const Modal = ({ isOpen, onClose, children, id, advert }) => {
         <ModalInfo advert={advert} />
         {children}
       </ModalContainer>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 };
 

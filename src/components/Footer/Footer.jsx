@@ -66,8 +66,8 @@ const Footer = () => {
         <FooterNav>
           <ContactContainer>
             <BiPhone size={16} />
-            <ContactLink href="tel:+380839998888">
-              +380 83 999 88 88
+            <ContactLink href="tel:+380730000000">
+              +38 073 000 00 00
             </ContactLink>
           </ContactContainer>
           <ContactContainer>
@@ -138,7 +138,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-//  <svg viewBox="0 0 32 32">
-//    <use xlinkHref={`${SvgSprite}#icon-addPhoto`} />
-//  </svg>;

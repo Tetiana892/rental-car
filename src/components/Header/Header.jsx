@@ -15,7 +15,7 @@ const Header = () => {
       <Container>
         <NavList>
           <NavLinkStyled to="/">
-            <Image src={Logo} alt="logo" width="96" />
+            <Image src={Logo} alt="logo" />
             Home
           </NavLinkStyled>
         </NavList>

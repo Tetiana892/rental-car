@@ -27,10 +27,17 @@ export const NavContainer = styled.header`
 
 export const Container = styled.div`
   display: flex;
-  width: 1187px;
+
   margin: 0 auto;
   gap: 60px;
-  padding-left: 20px;
+  padding-left: 10px;
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-left: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1187px;
+  }
 `;
 
 export const NavList = styled.ul`
@@ -42,8 +49,8 @@ export const NavLinkStyled = styled(NavLink)`
   align-items: center;
   text-decoration: none;
   gap: 5px;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   color: white;
 
   :hover,
@@ -56,13 +63,36 @@ export const NavLinkStyled = styled(NavLink)`
     font-weight: bold;
     color: #2196f3;
   }
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    font-weight: 500;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 32px;
+    font-weight: 500;
+  }
 `;
 export const Image = styled.img`
   border-radius: 50%;
-  margin-right: 40px;
+  margin-right: 10px;
+  width: 54px;
+  @media screen and (min-width: 768px) {
+    margin-right: 30px;
+    width: 84px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 40px;
+    width: 96px;
+  }
 `;
 export const Wraper = styled.div`
   display: flex;
   gap: 40px;
-  margin-left: 580px;
+  margin-left: auto;
+  @media screen and (min-width: 768px) {
+    margin-left: 190px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 580px;
+  }
 `;

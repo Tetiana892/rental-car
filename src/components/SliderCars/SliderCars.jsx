@@ -12,6 +12,7 @@ import {
   Title,
   Span,
   WrapperTitle,
+  WrapperContainer,
 } from './SliderCars.styled';
 
 import ImageWithFallback from '../../images/logo.png';
@@ -38,14 +39,14 @@ const SliderCars = () => {
   };
 
   return (
-    <div style={{ width: '1120px' }}>
+    <WrapperContainer>
       <Slider {...sliderSettings}>
         {adverts.map(advert => (
           <SliderWrapper key={advert.id}>
             {!advert.img ? (
-              <Img src={ImageWithFallback} width={335} />
+              <Img src={ImageWithFallback} />
             ) : (
-              <Img src={advert.img} alt={`${advert.make}`} width={335} />
+              <Img src={advert.img} alt={`${advert.make}`} />
             )}
             <WrapperTitle>
               <Title>
@@ -55,7 +56,7 @@ const SliderCars = () => {
           </SliderWrapper>
         ))}
       </Slider>
-    </div>
+    </WrapperContainer>
   );
 };
 

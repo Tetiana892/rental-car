@@ -43,10 +43,17 @@ export const LearnMoreButton = styled.button`
     background-color: #0056b3;
   }
 `;
+
 export const HeaderTitle = styled.h1`
-  font-size: 36px;
+  font-size: 28px;
   color: white;
   font-family: ManropeSemiBold;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 36px;
+  }
 `;
 
 export const Span = styled.span`
@@ -55,6 +62,13 @@ export const Span = styled.span`
 
 export const ItemText = styled.p`
   color: #ffff;
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 36px;
+  }
 `;
 
 export const Section = styled.div`
@@ -97,11 +111,22 @@ export const FleetItem = styled.li`
 `;
 
 export const SectionWrapper = styled.div`
-  display: flex;
   margin-top: 60px;
   margin-bottom: 40px;
   padding: 0 40px;
-  gap: 40px;
+  min-width: 200px;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 40px;
+    gap: 40px;
+    width: auto;
+  }
 `;
 export const SectionCard = styled.div`
   display: flex;

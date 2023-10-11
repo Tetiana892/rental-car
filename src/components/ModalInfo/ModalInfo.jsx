@@ -113,7 +113,7 @@ const ModalInfo = ({ advert }) => {
         </ConditionContainer>
 
         <Button>
-          <ButtonLink href="tel:+380839998888">Rental Car</ButtonLink>
+          <ButtonLink href="tel:+380730000000">Rental Car</ButtonLink>
         </Button>
       </InfoContainer>
     </div>

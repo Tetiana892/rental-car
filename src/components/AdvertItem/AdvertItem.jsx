@@ -16,7 +16,6 @@ import {
   SpanPrice,
   ImageContainer,
 } from './AdvertItem.styled';
-import SvgSprite from '../../images/sprite.svg';
 import ImageWithFallback from '../../images/logo.png';
 
 const AdvertList = ({ advert, index }) => {
@@ -66,9 +65,7 @@ const AdvertList = ({ advert, index }) => {
           onClick={toggleFavoite}
           fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'}
           stroke={isFavorite ? 'rgba(52, 112, 255, 1)' : 'white'}
-        >
-          <use xlinkHref={`${SvgSprite}#icon-heart-hidden`} width={18} />
-        </HeartIcon>
+        ></HeartIcon>
       </ImageContainer>
       <Title>
         {advert.make}

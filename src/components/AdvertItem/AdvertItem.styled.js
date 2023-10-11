@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { ReactComponent as Icon } from '../../images/icon.svg';
 
 export const ImageContainer = styled.div`
   position: relative;
 `;
 
-export const HeartIcon = styled.svg`
+export const HeartIcon = styled(Icon)`
   position: absolute;
   top: 10px;
   right: 10px;

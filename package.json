@@ -1,8 +1,8 @@
 {
-  "name": "car-rental",
+  "name": "rental-car",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Tetiana892.github.io/car-rental/",
+  "homepage": "https://Tetiana892.github.io/rental-car/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

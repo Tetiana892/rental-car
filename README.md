@@ -48,10 +48,10 @@ Rental Car - це веб-додаток, який дозволяє корист�
 
 ## Backend
 
-For backend, we can use UI-service https://mockapi.io/. Create advert в Mockapi
-with the next fields: id, year, make, model, type, img, description,
-fuelConsumption, engineSize, accessories, functionalities, rentalPrice,
-rentalCompany, address, rentalConditions, mileage.
+Для бекенда ми можемо використовувати UI-сервіс https://mockapi.io/. Створити
+оголошення в Mockapi з наступними полями: id, year, mark, model, type, img,
+description, споживання палива, розмір двигуна, аксесуари, функціональні
+можливості, ціна оренди, орендна компанія, адреса, умови оренди, пробіг.
 
 ![Mockapi1](./assets/mockapi.jpg) ![Mockapi2](./assets/mockapi2.jpg)
 

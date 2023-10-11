@@ -23,6 +23,7 @@ export const EmptyFavorites = styled.div`
 `;
 
 export const EmptyFavoritesMessage = styled.p`
+  margin-bottom: 20px;
   font-size: 24px;
   font-family: ManropeRegular;
   color: rgba(138, 138, 137, 1);

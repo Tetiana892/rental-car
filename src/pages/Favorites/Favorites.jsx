@@ -12,6 +12,8 @@ import {
   EmptyFavoritesMessage,
   FilteredContainer,
 } from './Favorites.styled';
+import NoFavorites from '../../components/NoFavorites/NoFavorites';
+import ImageSorry from '../../images/sorry.jpg';
 
 const Favorites = () => {
   const favorites = useSelector(getSelectorFavorites);
@@ -98,11 +100,7 @@ const Favorites = () => {
           />
         </FilteredContainer>
         {favorites.length === 0 ? (
-          <EmptyFavorites>
-            <EmptyFavoritesMessage>
-              Your favorites list is empty.
-            </EmptyFavoritesMessage>
-          </EmptyFavorites>
+          <NoFavorites />
         ) : (
           <>
             {isFiltering ? (
@@ -113,6 +111,7 @@ const Favorites = () => {
                   <EmptyFavoritesMessage>
                     No matching favorites found.
                   </EmptyFavoritesMessage>
+                  <img src={ImageSorry} alt="Sorry man" />
                 </EmptyFavorites>
               )
             ) : (

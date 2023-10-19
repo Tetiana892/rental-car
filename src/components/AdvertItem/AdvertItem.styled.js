@@ -1,25 +1,15 @@
 import styled from '@emotion/styled';
-import { ReactComponent as Icon } from '../../images/icon.svg';
 
 export const ImageContainer = styled.div`
   position: relative;
 `;
-
-export const HeartIcon = styled(Icon)`
+export const ButtonHeart = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 18px;
-  height: 18px;
-  opacity: 90%;
-
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: none;
   cursor: pointer;
-  stroke-width: 1.5;
-  stroke-opacity: 0.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  color: rgba(52, 112, 255, 1);
-
   :hover,
   :focus {
     transform: scale(1.2);

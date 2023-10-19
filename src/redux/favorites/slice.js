@@ -1,34 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-const getFavorites = () => {
-  const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  return storedFavorites;
-};
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: {
-    favorites: getFavorites(),
+    adverts: [],
   },
   reducers: {
-    addToFavorites: (state, action) => {
-      const newFavorites = action.payload;
-      const updateFavorites = [...state.favorites, newFavorites];
-      localStorage.setItem('favorites', JSON.stringify(updateFavorites));
-      state.favorites = updateFavorites;
+    addToFavorites: (state, { payload }) => {
+      state.adverts.push(payload);
     },
-    removeFavorites: (state, action) => {
-      const removedId = action.payload;
-      const filteredFavorites = state.favorites.filter(
-        advert => advert.id !== removedId
-      );
-      localStorage.setItem('favorites', JSON.stringify(filteredFavorites));
-      state.favorites = filteredFavorites;
+    removeFavorites: (state, { payload }) => {
+      state.adverts = state.adverts.filter(({ id }) => id !== payload);
     },
   },
 });
 
-export const { addToFavorites, removeFavorites } = favoritesSlice.actions;
-export const favoritesReducer = favoritesSlice.reducer;
+const persistConfig = {
+  key: 'favorites',
+  storage,
+};
 
-export default favoritesSlice.reducer;
+export const favoritesReducer = persistReducer(
+  persistConfig,
+  favoritesSlice.reducer
+);
+export const { addToFavorites, removeFavorites } = favoritesSlice.actions;

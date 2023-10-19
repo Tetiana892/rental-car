@@ -5,7 +5,6 @@ import { addToFavorites, removeFavorites } from 'redux/favorites/slice';
 import { getSelectorFavorites } from 'redux/favorites/selector';
 import Modal from '../Modal/Modal';
 import {
-  HeartIcon,
   Button,
   Descr,
   DescrContainer,
@@ -15,8 +14,10 @@ import {
   Title,
   SpanPrice,
   ImageContainer,
+  ButtonHeart,
 } from './AdvertItem.styled';
 import ImageWithFallback from '../../images/logo.png';
+import Icons from '../../images/sprite.svg';
 
 const AdvertList = ({ advert, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,15 +43,14 @@ const AdvertList = ({ advert, index }) => {
     setIsFavorite(isFavoriteCar);
   }, [favorites, advert]);
 
-  const toggleFavoite = () => {
-    if (isFavorite) {
-      dispatch(removeFavorites(advert.id));
-      toast.warning('The ad has been removed from favorites.');
-    } else {
-      dispatch(addToFavorites(advert));
-      toast.success('Ad has been added to favorites.');
-    }
-    setIsFavorite(!isFavorite);
+  const addHeart = () => {
+    dispatch(addToFavorites(advert));
+    toast.success('Add has been added to favorites.');
+  };
+
+  const removeHeart = () => {
+    dispatch(removeFavorites(advert.id));
+    toast.warning('The add has been removed from favorites.');
   };
 
   return (
@@ -61,11 +61,19 @@ const AdvertList = ({ advert, index }) => {
         ) : (
           <Img src={advert.img} alt={`${advert.make}`} width={274} />
         )}
-        <HeartIcon
-          onClick={toggleFavoite}
-          fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'}
-          stroke={isFavorite ? 'rgba(52, 112, 255, 1)' : 'white'}
-        ></HeartIcon>
+        {isFavorite ? (
+          <ButtonHeart type="button" onClick={removeHeart}>
+            <svg width={18} height={18}>
+              <use href={Icons + '#icon-heart-blue'} />
+            </svg>
+          </ButtonHeart>
+        ) : (
+          <ButtonHeart type="button" onClick={addHeart}>
+            <svg width={18} height={18}>
+              <use href={Icons + '#icon-heart-hidden'} />
+            </svg>
+          </ButtonHeart>
+        )}
       </ImageContainer>
       <Title>
         {advert.make}
